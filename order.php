@@ -7,11 +7,12 @@
  */
 
 
-date_default_timezone_set("Asia/Shanghai");
-
-
 //var_dump($_POST);
 //$orderid = trim($_POST["orderid"]);
+
+
+date_default_timezone_set("Asia/Shanghai");
+
 $orderid = time();
 $product = trim($_POST["product"]);
 $mun = trim($_POST["mun"]);
@@ -185,9 +186,15 @@ if (!isset($result)) {
     .inner {
         margin-left: auto;
         margin-right: auto;
-        width: 400px;
+        width: 80%;
         text-align: center;
         /*whatever width you want*/
+    }
+    .inner h1{
+        font-size: 8rem;
+    }
+    .inner p{
+        font-size: 6rem;
     }
 
 </style>
@@ -198,11 +205,11 @@ if (!isset($result)) {
         <div class="inner">
             <?php
             if (isset($result)) {
-                echo "<h1 style=\"color: crimson\">留言失败</h1>";
+                echo "<h1 style=\"color: crimson\">订单提交失败</h1>";
                 echo "<p>$result</p>";
             } else {
-                echo "<h1 style=\"color: green\">留言成功</h1>";
-                echo "<p>我们将在24小时内与您联系！</p>";
+                echo "<h1 style=\"color: green\">恭喜您，订购成功</h1>";
+                echo "<p><span style=\"color: red\">$name</span>，您的订单将在24小时内安排发货！</p>";
             }
             ?>
 

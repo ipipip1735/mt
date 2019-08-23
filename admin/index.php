@@ -20,7 +20,7 @@ try {
     $table = "order";
 
     $dbh = new PDO("mysql:host=$host;dbname=$dbname;charset=$charset", $user, $pass);
-    $mySQL = "SELECT * FROM $dbname.$table";
+    $mySQL = "SELECT * FROM $dbname.$table ORDER BY orderid DESC;";
     $stm = $dbh->query($mySQL);
     $r = $stm->fetchAll();
 
@@ -28,6 +28,7 @@ try {
     echo "<table border='1'>";
     echo "<tr>";
     echo "<td>订单号</td>";
+    echo "<td>时间</td>";
     echo "<td>产品</td>";
     echo "<td>not3chanpin</td>";
     echo "<td>数量</td>";
@@ -48,12 +49,12 @@ try {
     echo "<td>click_id</td>";
     echo "<td>搜索关键字</td>";
     echo "<td>not3tuijian</td>";
-    echo "<td>时间</td>";
     echo "<td>ip</td>";
     echo "</tr>";
     foreach ($r as $item) {
         echo "<tr>";
         echo "<td>" . $item["orderid"] . "</td>";
+        echo "<td>" . $item["time"] . "</td>";
         echo "<td>" . $item["product"] . "</td>";
         echo "<td>" . $item["not3chanpin"] . "</td>";
         echo "<td>" . $item["mun"] . "</td>";
@@ -74,7 +75,6 @@ try {
         echo "<td>" . $item["click_id"] . "</td>";
         echo "<td>" . $item["keyword"] . "</td>";
         echo "<td>" . $item["not3tuijian"] . "</td>";
-        echo "<td>" . $item["time"] . "</td>";
         echo "<td>" . $item["ip"] . "</td>";
         echo "</tr>";
     }

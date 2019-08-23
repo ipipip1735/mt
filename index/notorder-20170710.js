@@ -173,14 +173,14 @@ function not3readuserinfo(){
     $("input[name='address']").val(readcookie("not3address"))
 }
 $(document).ready(function(){
-    if(readcookie("not3name")){
-        if(IsPC()){
-           var addbtn="padding:5px;margin-left:10px;color:red;height:2rem;"
-        }else{
-           var addbtn="padding:5px;margin-left:10px;color:red;border:1px #ccc solid;height:2rem;background:#EBF7FF;-webkit-appearance: none;"
-        }
-        $(".jia").after('<button type="button" style="'+addbtn+'" onclick="not3readuserinfo()" >使用【'+readcookie("not3name")+'】收货信息</button>');
-    }
+    // if(readcookie("not3name")){
+    //     if(IsPC()){
+    //        var addbtn="padding:5px;margin-left:10px;color:red;height:2rem;"
+    //     }else{
+    //        var addbtn="padding:5px;margin-left:10px;color:red;border:1px #ccc solid;height:2rem;background:#EBF7FF;-webkit-appearance: none;"
+    //     }
+    //     $(".jia").after('<button type="button" style="'+addbtn+'" onclick="not3readuserinfo()" >使用【'+readcookie("not3name")+'】收货信息</button>');
+    // }
 })
 
 function not3guanlianchanpin(){
